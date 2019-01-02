@@ -1,10 +1,15 @@
 package main
 
-import "fmt"
+import (
+	"bufio"
+	"fmt"
+	"os"
+)
 
+// _ is the blank identifier and it acts as a placeholder
 func main() {
-	var input string
-	fmt.Scanln(&input)
 	fmt.Println("Hello, World.")
-	fmt.Print(input)
+	reader := bufio.NewReader(os.Stdin)
+	input, _ := reader.ReadString('\n')
+	fmt.Println(input)
 }
