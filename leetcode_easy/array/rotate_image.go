@@ -1,4 +1,4 @@
-package leetcode_easy
+package array
 
 func rotate_matrix(matrix [][]int) {
 	flip(matrix)

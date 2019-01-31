@@ -1,4 +1,4 @@
-package leetcode_easy
+package array
 
 func moveZeroes(nums []int) {
 	if len(nums) < 2 {

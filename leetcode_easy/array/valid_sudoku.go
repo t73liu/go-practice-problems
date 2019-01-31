@@ -1,4 +1,4 @@
-package leetcode_easy
+package array
 
 func isValidSudoku(board [][]byte) bool {
 	for i := 0; i < 9; i++ {

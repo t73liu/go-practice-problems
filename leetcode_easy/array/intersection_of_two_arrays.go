@@ -1,4 +1,4 @@
-package leetcode_easy
+package array
 
 func intersect(nums1 []int, nums2 []int) []int {
 	count1 := make(map[int]int)

@@ -1,4 +1,4 @@
-package leetcode_easy
+package array
 
 func containsDuplicate(nums []int) bool {
 	exists := make(map[int]bool)

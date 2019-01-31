@@ -1,4 +1,4 @@
-package leetcode_easy
+package array
 
 func rotate(nums []int, k int) {
 	size := len(nums)

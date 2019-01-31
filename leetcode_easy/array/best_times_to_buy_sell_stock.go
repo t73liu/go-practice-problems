@@ -1,4 +1,4 @@
-package leetcode_easy
+package array
 
 func maxProfit(prices []int) int {
 	size := len(prices)
