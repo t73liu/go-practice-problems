@@ -1,9 +1,6 @@
 package string
 
-import (
-	"fmt"
-	"math"
-)
+import "math"
 
 func isInteger(c byte) bool {
 	return c >= 48 && c <= 57
@@ -23,6 +20,9 @@ func isSpace(c byte) bool {
 
 func myAtoi(str string) int {
 	result := 0
+
+	lower := int(-math.Exp2(31.0))
+	upper := int(math.Exp2(31.0)) - 1
 
 	isFirstSeq := false
 	isLeadingNegative := false
@@ -44,12 +44,10 @@ func myAtoi(str string) int {
 				isFirstSeq = true
 				result = result*10 + int(str[i]) - 48
 
-				if isLeadingNegative && (result*-1) < int(-math.Exp2(31.0)) {
-					fmt.Println("test")
-					return int(-math.Exp2(31.0))
-				} else if result > int(math.Exp2(31.0))-1 {
-					fmt.Println("test 2")
-					return int(math.Exp2(31.0)) - 1
+				if isLeadingNegative && (-result <= lower) {
+					return lower
+				} else if !isLeadingNegative && result >= upper {
+					return upper
 				}
 			} else if isPositive(str[i]) {
 				if isFirstSeq {
